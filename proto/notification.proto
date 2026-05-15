@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package notification;
+
+message Notification {
+  string id = 1;
+  string patient_id = 2;
+  string type = 3;
+  string message = 4;
+  bool is_read = 5;
+  string created_at = 6;
+}
+
+message CreateNotificationRequest {
+  string patient_id = 1;
+  string type = 2;
+  string message = 3;
+}
+
+message GetNotificationRequest {
+  string id = 1;
+}
+
+message ListNotificationsRequest {}
+
+message ListNotificationsResponse {
+  repeated Notification notifications = 1;
+}
+
+message ListNotificationsByPatientRequest {
+  string patient_id = 1;
+}
+
+message MarkNotificationAsReadRequest {
+  string id = 1;
+}
+
+service NotificationService {
+  rpc CreateNotification(CreateNotificationRequest) returns (Notification);
+  rpc GetNotification(GetNotificationRequest) returns (Notification);
+  rpc ListNotifications(ListNotificationsRequest) returns (ListNotificationsResponse);
+  rpc ListNotificationsByPatient(ListNotificationsByPatientRequest) returns (ListNotificationsResponse);
+  rpc MarkNotificationAsRead(MarkNotificationAsReadRequest) returns (Notification);
+}
