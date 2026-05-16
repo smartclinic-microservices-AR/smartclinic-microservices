@@ -3,6 +3,7 @@ const grpc = require('@grpc/grpc-js');
 const protoLoader = require('@grpc/proto-loader');
 const { v4: uuidv4 } = require('uuid');
 const db = require('./db');
+const sendAppointmentEvent = require('./kafkaProducer');
 
 const PROTO_PATH = path.join(__dirname, '../../proto/appointment.proto');
 
@@ -55,6 +56,15 @@ function createAppointment(call, callback) {
           message: err.message,
         });
       }
+
+      sendAppointmentEvent('appointment.created', {
+        appointment_id: appointment.id,
+        patient_id: appointment.patient_id,
+        doctor_id: appointment.doctor_id,
+        date: appointment.date,
+        reason: appointment.reason,
+        status: appointment.status,
+      });
 
       callback(null, appointment);
     }
@@ -134,6 +144,16 @@ function updateAppointmentStatus(call, callback) {
           return callback({
             code: grpc.status.INTERNAL,
             message: updateErr.message,
+          });
+        }
+
+        if (status === 'CANCELLED') {
+          sendAppointmentEvent('appointment.cancelled', {
+            appointment_id: id,
+            patient_id: row.patient_id,
+            doctor_id: row.doctor_id,
+            date: row.date,
+            status: 'CANCELLED',
           });
         }
 

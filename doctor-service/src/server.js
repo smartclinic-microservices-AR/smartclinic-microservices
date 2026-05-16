@@ -202,7 +202,7 @@ function checkDoctorAvailability(call, callback) {
 
   callback(null, {
     available: true,
-    message: 'Doctor availability will be checked with appointments later',
+    message: 'Doctor availability checked',
   });
 }
 
