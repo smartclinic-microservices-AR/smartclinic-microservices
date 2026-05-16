@@ -1,0 +1,637 @@
+{
+  "info": {
+    "_postman_id": "c046c9ba-7e90-4f89-be7b-0b41867ac9b8",
+    "name": "New Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51734258",
+    "_collection_link": "https://go.postman.co/collection/51734258-c046c9ba-7e90-4f89-be7b-0b41867ac9b8?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "GraphQL - List Appointments",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": [
+        {
+          "name": "REST - Create Patient",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"full_name\": \"Amira Farrah\",\r\n  \"email\": \"amira@example.com\",\r\n  \"phone\": \"22111222\",\r\n  \"birth_date\": \"2002-04-10\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/patients",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "patients"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "185"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"b9-BbbEbL0bFyAoHpaAAJieZEMVQHA\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 15 May 2026 23:08:14 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"39e12a7b-23c2-4bac-a597-f1145a89e533\",\n    \"full_name\": \"Amira Farrah\",\n    \"email\": \"amira@example.com\",\n    \"phone\": \"22111222\",\n    \"birth_date\": \"2002-04-10\",\n    \"created_at\": \"2026-05-15T23:08:14.149Z\"\n}"
+        },
+        {
+          "name": "REST - List Patients",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"full_name\": \"Amira Farrah\",\r\n  \"email\": \"amira@example.com\",\r\n  \"phone\": \"22111222\",\r\n  \"birth_date\": \"2002-04-10\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/patients",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "patients"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "187"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"bb-+7NDhQ/WOeQoPyEf+mAKAuiNQJc\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 15 May 2026 23:12:32 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": \"39e12a7b-23c2-4bac-a597-f1145a89e533\",\n        \"full_name\": \"Amira Farrah\",\n        \"email\": \"amira@example.com\",\n        \"phone\": \"22111222\",\n        \"birth_date\": \"2002-04-10\",\n        \"created_at\": \"2026-05-15T23:08:14.149Z\"\n    }\n]"
+        },
+        {
+          "name": "REST - Create Doctor",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"full_name\": \"Amira Farrah\",\r\n  \"email\": \"amira@example.com\",\r\n  \"phone\": \"22111222\",\r\n  \"birth_date\": \"2002-04-10\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/patients",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "patients"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "187"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"bb-+7NDhQ/WOeQoPyEf+mAKAuiNQJc\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 15 May 2026 23:12:32 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": \"39e12a7b-23c2-4bac-a597-f1145a89e533\",\n        \"full_name\": \"Amira Farrah\",\n        \"email\": \"amira@example.com\",\n        \"phone\": \"22111222\",\n        \"birth_date\": \"2002-04-10\",\n        \"created_at\": \"2026-05-15T23:08:14.149Z\"\n    }\n]"
+        },
+        {
+          "name": "REST - Create Appointment",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"patient_id\": \"39e12a7b-23c2-4bac-a597-f1145a89e533\",\r\n  \"doctor_id\": \"12825772-df12-4bb7-977f-4c1c931e5ba4\",\r\n  \"date\": \"2026-05-20T10:00:00Z\",\r\n  \"reason\": \"heart check\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/appointments",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "appointments"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "260"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"104-+YeRIJU0cJJF3udx0dTgI6Sy3z0\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 15 May 2026 23:18:15 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"b3a6176d-c4ed-43eb-9054-6a9b37a1a3b5\",\n    \"patient_id\": \"39e12a7b-23c2-4bac-a597-f1145a89e533\",\n    \"doctor_id\": \"12825772-df12-4bb7-977f-4c1c931e5ba4\",\n    \"date\": \"2026-05-20T10:00:00Z\",\n    \"reason\": \"heart check\",\n    \"status\": \"PENDING\",\n    \"created_at\": \"2026-05-15T23:18:15.229Z\"\n}"
+        },
+        {
+          "name": "REST - Update Appointment Status",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"status\": \"CONFIRMED\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/appointments/b3a6176d-c4ed-43eb-9054-6a9b37a1a3b5/status",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "appointments",
+                "b3a6176d-c4ed-43eb-9054-6a9b37a1a3b5",
+                "status"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "262"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"106-7Gwj/qDCxSLJqx1+y9TsfzzNEog\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 15 May 2026 23:31:29 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"b3a6176d-c4ed-43eb-9054-6a9b37a1a3b5\",\n    \"patient_id\": \"39e12a7b-23c2-4bac-a597-f1145a89e533\",\n    \"doctor_id\": \"12825772-df12-4bb7-977f-4c1c931e5ba4\",\n    \"date\": \"2026-05-20T10:00:00Z\",\n    \"reason\": \"heart check\",\n    \"status\": \"CONFIRMED\",\n    \"created_at\": \"2026-05-15T23:18:15.229Z\"\n}"
+        },
+        {
+          "name": "REST - List Notifications",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"status\": \"CONFIRMED\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/notifications",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "notifications"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "2"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 15 May 2026 23:33:46 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "[]"
+        },
+        {
+          "name": "GraphQL - List Patients",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query {\r\n  patients {\r\n    id\r\n    full_name\r\n    email\r\n    phone\r\n  }\r\n}",
+                "variables": ""
+              },
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/graphql",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "graphql"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-store"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "144"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"90-xDQjRIZBVbsym58HErJHoBS9Wu0\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 15 May 2026 23:35:44 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"data\": {\n        \"patients\": [\n            {\n                \"id\": \"39e12a7b-23c2-4bac-a597-f1145a89e533\",\n                \"full_name\": \"Amira Farrah\",\n                \"email\": \"amira@example.com\",\n                \"phone\": \"22111222\"\n            }\n        ]\n    }\n}"
+        },
+        {
+          "name": "GraphQL - Create Patient",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "mutation {\r\n  createPatient(\r\n    full_name: \"Yasmine Trabelsi\"\r\n    email: \"yasmine@example.com\"\r\n    phone: \"99111222\"\r\n    birth_date: \"2001-06-12\"\r\n  ) {\r\n    id\r\n    full_name\r\n    email\r\n    phone\r\n    birth_date\r\n  }\r\n}",
+                "variables": ""
+              },
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/graphql",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "graphql"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-store"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "179"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"b3-nIuosCRHVVxkIgZsz9Ynrs/SQlE\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 15 May 2026 23:36:42 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"data\": {\n        \"createPatient\": {\n            \"id\": \"6f5c30ac-1ee8-4a1c-af1c-b60c6636210f\",\n            \"full_name\": \"Yasmine Trabelsi\",\n            \"email\": \"yasmine@example.com\",\n            \"phone\": \"99111222\",\n            \"birth_date\": \"2001-06-12\"\n        }\n    }\n}"
+        },
+        {
+          "name": "GraphQL - List Appointments",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query {\r\n  appointments {\r\n    id\r\n    patient_id\r\n    doctor_id\r\n    date\r\n    reason\r\n    status\r\n  }\r\n}",
+                "variables": ""
+              },
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/graphql",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "graphql"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-store"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "251"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"fb-YMTFBVYa+YupyprM3gIn7YlxkGk\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 15 May 2026 23:38:17 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"data\": {\n        \"appointments\": [\n            {\n                \"id\": \"b3a6176d-c4ed-43eb-9054-6a9b37a1a3b5\",\n                \"patient_id\": \"39e12a7b-23c2-4bac-a597-f1145a89e533\",\n                \"doctor_id\": \"12825772-df12-4bb7-977f-4c1c931e5ba4\",\n                \"date\": \"2026-05-20T10:00:00Z\",\n                \"reason\": \"heart check\",\n                \"status\": \"CONFIRMED\"\n            }\n        ]\n    }\n}"
+        }
+      ]
+    }
+  ]
+}
