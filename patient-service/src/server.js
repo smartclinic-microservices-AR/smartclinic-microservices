@@ -1,10 +1,11 @@
-const path = require('path');
-const grpc = require('@grpc/grpc-js');
-const protoLoader = require('@grpc/proto-loader');
-const { v4: uuidv4 } = require('uuid');
-const db = require('./db');
+const path = require("path");
+const grpc = require("@grpc/grpc-js");
+const protoLoader = require("@grpc/proto-loader");
+const { v4: uuidv4 } = require("uuid");
+const db = require("./db");
+const sendPatientEvent = require("./kafkaProducer");
 
-const PROTO_PATH = path.join(__dirname, '../../proto/patient.proto');
+const PROTO_PATH = path.join(__dirname, "../../proto/patient.proto");
 
 const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
   keepCase: true,
@@ -22,7 +23,7 @@ function createPatient(call, callback) {
   if (!full_name || !email || !phone) {
     return callback({
       code: grpc.status.INVALID_ARGUMENT,
-      message: 'full_name, email and phone are required',
+      message: "full_name, email and phone are required",
     });
   }
 
@@ -31,7 +32,7 @@ function createPatient(call, callback) {
     full_name,
     email,
     phone,
-    birth_date: birth_date || '',
+    birth_date: birth_date || "",
     created_at: new Date().toISOString(),
   };
 
@@ -54,6 +55,15 @@ function createPatient(call, callback) {
         });
       }
 
+      sendPatientEvent("patient.created", {
+        patient_id: patient.id,
+        full_name: patient.full_name,
+        email: patient.email,
+        phone: patient.phone,
+        birth_date: patient.birth_date,
+        created_at: patient.created_at,
+      });
+
       callback(null, patient);
     }
   );
@@ -73,7 +83,7 @@ function getPatient(call, callback) {
     if (!row) {
       return callback({
         code: grpc.status.NOT_FOUND,
-        message: 'Patient not found',
+        message: "Patient not found",
       });
     }
 
@@ -108,7 +118,7 @@ function updatePatient(call, callback) {
     if (!row) {
       return callback({
         code: grpc.status.NOT_FOUND,
-        message: 'Patient not found',
+        message: "Patient not found",
       });
     }
 
@@ -160,13 +170,13 @@ function deletePatient(call, callback) {
     if (this.changes === 0) {
       return callback(null, {
         success: false,
-        message: 'Patient not found',
+        message: "Patient not found",
       });
     }
 
     callback(null, {
       success: true,
-      message: 'Patient deleted successfully',
+      message: "Patient deleted successfully",
     });
   });
 }
@@ -203,11 +213,11 @@ function main() {
   });
 
   server.bindAsync(
-    '0.0.0.0:50051',
+    "0.0.0.0:50051",
     grpc.ServerCredentials.createInsecure(),
     (err, port) => {
       if (err) {
-        console.error('Patient Service error:', err);
+        console.error("Patient Service error:", err);
         return;
       }
 

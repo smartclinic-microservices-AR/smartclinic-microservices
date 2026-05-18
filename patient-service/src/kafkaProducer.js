@@ -1,23 +1,22 @@
 const { Kafka } = require('kafkajs');
 
 const kafka = new Kafka({
-  clientId: 'appointment-service',
+  clientId: 'patient-service',
   brokers: [process.env.KAFKA_BROKER || 'localhost:9092'],
 });
 
 const producer = kafka.producer();
-
 let isConnected = false;
 
 async function connectProducer() {
   if (!isConnected) {
     await producer.connect();
     isConnected = true;
-    console.log('Appointment Kafka producer connected.');
+    console.log('Patient Kafka producer connected.');
   }
 }
 
-async function sendAppointmentEvent(topic, eventData) {
+async function sendPatientEvent(topic, eventData) {
   try {
     await connectProducer();
 
@@ -36,4 +35,4 @@ async function sendAppointmentEvent(topic, eventData) {
   }
 }
 
-module.exports = sendAppointmentEvent;
+module.exports = sendPatientEvent;
